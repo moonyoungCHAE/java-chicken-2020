@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+// 기존 코드 수정 불가능
+// 추가 가능
 public class MenuRepository {
     private static final List<Menu> menus = new ArrayList<>();
 
