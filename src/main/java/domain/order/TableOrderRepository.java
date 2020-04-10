@@ -1,4 +1,4 @@
-package domain.payment.order;
+package domain.order;
 
 import domain.table.Table;
 import domain.table.TableRepository;

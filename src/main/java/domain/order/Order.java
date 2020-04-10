@@ -1,4 +1,4 @@
-package domain.payment.order;
+package domain.order;
 
 import domain.menu.Menu;
 import domain.payment.discount.Discount;
@@ -36,5 +36,11 @@ public class Order {
 
     public int getMenuCount() {
         return menuCount;
+    }
+
+    public double computePrice() {
+        double totalPrice = menu.getPrice() * menuCount;
+        totalPrice -= discount.discountByCount(totalPrice, menuCount);
+        return totalPrice;
     }
 }

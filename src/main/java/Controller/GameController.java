@@ -2,8 +2,8 @@ package Controller;
 
 import domain.menu.Menu;
 import domain.menu.MenuRepository;
-import domain.payment.order.TableOrder;
-import domain.payment.order.TableOrderRepository;
+import domain.order.TableOrder;
+import domain.order.TableOrderRepository;
 import domain.table.Table;
 import domain.table.TableRepository;
 import view.InputView;

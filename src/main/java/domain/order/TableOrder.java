@@ -1,4 +1,4 @@
-package domain.payment.order;
+package domain.order;
 
 import domain.menu.Menu;
 import domain.menu.MenuRepository;
