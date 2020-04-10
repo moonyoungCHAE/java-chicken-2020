@@ -43,4 +43,8 @@ public class Order {
         totalPrice -= discount.discountByCount(totalPrice, menuCount);
         return totalPrice;
     }
+
+    public Menu getMenu() {
+        return menu;
+    }
 }

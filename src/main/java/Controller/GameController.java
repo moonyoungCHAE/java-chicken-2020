@@ -4,6 +4,8 @@ import domain.menu.Menu;
 import domain.menu.MenuRepository;
 import domain.order.TableOrder;
 import domain.order.TableOrderRepository;
+import domain.payment.Payment;
+import domain.payment.PaymentMethod;
 import domain.table.Table;
 import domain.table.TableRepository;
 import view.InputView;
@@ -43,7 +45,12 @@ public class GameController {
     }
 
     private void pay() {
-        selectMenu();
+        Table table = selectTable();
+        TableOrder tableOrder = findTableOrder(table);
+        OutputView.printOrder(tableOrder);
+        PaymentMethod paymentMethod = InputView.inputPaymentMethod(table);
+        Payment payment  = new Payment(tableOrder.getTotalPrice(), paymentMethod);
+        OutputView.printPrice(payment);
     }
 
     private Table selectTable () {

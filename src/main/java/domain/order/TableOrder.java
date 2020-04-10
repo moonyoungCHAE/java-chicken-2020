@@ -52,4 +52,16 @@ public class TableOrder {
     public int getMenuCount(Menu menu) {
         return findOrder(menu).getMenuCount();
     }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public double getTotalPrice() {
+        double price = 0;
+        for (Order order : orders) {
+            price += order.computePrice();
+        }
+        return price;
+    }
 }

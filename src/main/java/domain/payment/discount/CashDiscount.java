@@ -1,7 +1,7 @@
 package domain.payment.discount;
 
 public class CashDiscount implements Discount {
-    private double discountPercentage = 0.1;
+    private double discountPercentage = 0.05;
 
     @Override
     public double discountByPercentage(double originMoney) {

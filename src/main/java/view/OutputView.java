@@ -2,6 +2,9 @@ package view;
 
 import Controller.Command;
 import domain.menu.Menu;
+import domain.order.Order;
+import domain.order.TableOrder;
+import domain.payment.Payment;
 import domain.table.Table;
 
 import java.util.List;
@@ -53,5 +56,26 @@ public class OutputView {
             System.out.printf(TABLE_FORMAT, table);
         }
         System.out.println();
+    }
+
+    public static void printOrder(TableOrder tableOrder) {
+        System.out.println("## 주문 내역");
+        System.out.println("메뉴 수량 금액");
+
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Order order : tableOrder.getOrders()) {
+            Menu menu = order.getMenu();
+            stringBuilder.append(menu.getName());
+            stringBuilder.append(order.getMenuCount());
+            stringBuilder.append(order.computePrice());
+            stringBuilder.append(NEW_LINE);
+        }
+        System.out.println(stringBuilder);
+        System.out.println();
+    }
+
+    public static void printPrice(Payment payment) {
+        System.out.println("## 최종 결제할 금액");
+        System.out.println(payment.computePrice()+"원");
     }
 }
