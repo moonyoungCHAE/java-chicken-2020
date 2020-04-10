@@ -29,20 +29,26 @@ public class GameController {
 
 
     private void addOrder() {
-        OutputView.printTables(tables);
-
-        final int tableNumber = InputView.inputTableNumber();
-        final Table table = TableRepository.from(tableNumber);
-
-        OutputView.printMenus(menus);
-        final int menuNumber = InputView.inputMenuNumber();
-        final Menu menu = MenuRepository.from(menuNumber);
-
+        Table table = selectTable();
+        Menu menu = selectMenu();
         final int menuCount = InputView.inputMenuCount();
         table.addMenu(menu, menuCount);
     }
 
     private void pay() {
+        selectMenu();
+    }
 
+    private Table selectTable () {
+        OutputView.printTables(tables);
+
+        final int tableNumber = InputView.inputTableNumber();
+        return TableRepository.from(tableNumber);
+    }
+
+    private Menu selectMenu () {
+        OutputView.printMenus(menus);
+        final int menuNumber = InputView.inputMenuNumber();
+        return MenuRepository.from(menuNumber);
     }
 }

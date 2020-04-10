@@ -19,8 +19,4 @@ public class Application {
             }
         } while(command != Command.END);
     }
-
-    public static void addOrder() {
-
-    }
 }
