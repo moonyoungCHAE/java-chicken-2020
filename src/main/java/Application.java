@@ -14,8 +14,11 @@ public class Application {
         OutputView.printTables(tables);
 
         final int tableNumber = InputView.inputTableNumber();
+        Table table = TableRepository.from(tableNumber);
 
         final List<Menu> menus = MenuRepository.menus();
         OutputView.printMenus(menus);
+        final int menuNumber = InputView.inputMenuNumber();
+        Menu menu = MenuRepository.from(menuNumber);
     }
 }
