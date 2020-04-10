@@ -1,6 +1,6 @@
 package view;
 
-import domain.Command;
+import Controller.Command;
 
 import java.util.Scanner;
 

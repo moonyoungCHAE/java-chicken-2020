@@ -1,4 +1,6 @@
-package domain;
+package domain.menu;
+
+import domain.Category;
 
 // 기본 생성자 추가 불가능
 // 인스턴스 변수 추가 불가능
@@ -17,12 +19,25 @@ public class Menu {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-        return category + " " + number + " - " + name + " : " + price + "원";
-    }
 
     public int getNumber() {
         return number;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public boolean isChicken() {
+        return category == Category.CHICKEN;
+    }
+
+    @Override
+    public String toString() {
+        return category + " " + number + " - " + name + " : " + price + "원";
     }
 }

@@ -1,4 +1,6 @@
-package domain;
+package domain.table;
+
+import domain.menu.Menu;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,11 +20,6 @@ public class Table {
         this.menus = new HashMap<>();
     }
 
-    @Override
-    public String toString() {
-        return Integer.toString(number);
-    }
-
     public void addMenu(Menu menu, int menuCount) {
         Objects.requireNonNull(menu);
         if (menuCount < MIN_MENU_COUNT) {
@@ -39,5 +36,14 @@ public class Table {
     public int getMenuCount(Menu menu) {
         Objects.requireNonNull(menu);
         return menus.getOrDefault(menu, 0);
+    }
+
+    public Map<Menu, Integer> getMenus() {
+        return menus;
+    }
+
+    @Override
+    public String toString() {
+        return Integer.toString(number);
     }
 }

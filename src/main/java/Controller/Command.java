@@ -1,4 +1,4 @@
-package domain;
+package Controller;
 
 import java.util.Arrays;
 

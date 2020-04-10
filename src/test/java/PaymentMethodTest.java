@@ -1,5 +1,4 @@
-import domain.PaymentMethod;
-import org.junit.jupiter.api.Assertions;
+import domain.payment.PaymentMethod;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;

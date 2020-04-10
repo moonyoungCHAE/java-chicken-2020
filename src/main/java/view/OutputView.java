@@ -1,8 +1,8 @@
 package view;
 
-import domain.Command;
-import domain.Menu;
-import domain.Table;
+import Controller.Command;
+import domain.menu.Menu;
+import domain.table.Table;
 
 import java.util.List;
 
