@@ -1,27 +1,26 @@
-import domain.Menu;
-import domain.MenuRepository;
-import domain.Table;
-import domain.TableRepository;
+import Controller.GameController;
+import domain.*;
 import view.InputView;
 import view.OutputView;
 
 import java.util.List;
 
 public class Application {
-    // TODO 구현 진행
     public static void main(String[] args) {
-        final List<Table> tables = TableRepository.tables();
-        OutputView.printTables(tables);
+        GameController gameController = new GameController();
 
-        final int tableNumber = InputView.inputTableNumber();
-        Table table = TableRepository.from(tableNumber);
+        Command command = null;
+        do {
+            try {
+                command = gameController.play();
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+                System.out.println();
+            }
+        } while(command != Command.END);
+    }
 
-        final List<Menu> menus = MenuRepository.menus();
-        OutputView.printMenus(menus);
-        final int menuNumber = InputView.inputMenuNumber();
-        Menu menu = MenuRepository.from(menuNumber);
+    public static void addOrder() {
 
-        final int menuCount = InputView.inputMenuCount();
-        table.addMenu(menu, menuCount);
     }
 }
