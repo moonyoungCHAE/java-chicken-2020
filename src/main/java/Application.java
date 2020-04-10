@@ -20,5 +20,8 @@ public class Application {
         OutputView.printMenus(menus);
         final int menuNumber = InputView.inputMenuNumber();
         Menu menu = MenuRepository.from(menuNumber);
+
+        final int menuCount = InputView.inputMenuCount();
+        table.addMenu(menu, menuCount);
     }
 }
